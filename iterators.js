@@ -9,12 +9,8 @@ const logger = (array) => {
     console.log(element);
 });
 };
- 
-  const logs=[1,2,3,4,5]
-  
-  logger(logs)
 
-/*************************************
+ /*************************************
  * toCelsius(temperatures)
  *
  * - Accepts an array of temperatures
@@ -27,7 +23,7 @@ const logger = (array) => {
  ************************************/
 const toCelsius = (array) =>array.map(temp=>(temp-32)*(5/9));
  
-console.log(toCelsius([80,90]))
+
 
 /**************************************
  * hottestDays(temperatures, threshhold)
@@ -39,8 +35,9 @@ console.log(toCelsius([80,90]))
  ***************************************/
 const hottestDays = (temperatures, threshhold) =>temperatures.filter((element)=>element>threshhold);
 
-    temperatures=[50,30,25,45]
-console.log(hottestDays(temperatures,40))
+    
+    
+
 /******************************************
  * logHottestDays(temperatures, threshhold)
  *
@@ -55,16 +52,27 @@ console.log(hottestDays(temperatures,40))
  * hint: you can combine
  *       all previous functions
  *******************************************/
-const logHottestDays = (temperatures, threshhold) =>{ 
-return temperatures.filter((element)=>element>threshhold);
-  return temperatures.map(temperatures=>(temperatures-32)*(5/9));
-    
-    
-};
+//const logHottestDays = (temperatures, threshhold) =>{ 
+//return temperatures.filter((element)=>element>threshhold);
+//return temperatures.map(temperatures=>(temperatures-32)*(5/9));
 
-temperatures=[100,90,76,50];
-console.log(logHottestDays(temperatures,80));
+   
+const logHottestDays =function(temperatures, threshhold){ 
 
+logger(toCelsius(hottestDays(temperatures,threshhold)));
+}
+
+// const logHottestDays =function (temperatures, threshhold) {
+//         logger(toCelsius(hottestDays(temperatures, threshhold)));
+//         const hottestDays = hottestDays(temperatures, threshhold);
+//         const Celsius = toCelsius(hottestDays);
+//         logger(Celsius);
+//     };
+
+        
+  //      toCelsius(temperatures),
+    //toCelsius([threshhold])).forEach(temperatures => {console.log(temperatures);
+        
 /* Uncomment the following lines to test your code... */
 
 // logger([1, 2, 3, 4, 5, 6, 7]);
